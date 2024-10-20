@@ -20,23 +20,25 @@ class LinkedList {
       this.#head = new Node(value);
       this.#tail = this.#head;
     } else {
-      this.#head = new Node(value,this.#head);
+      this.#head = new Node(value, this.#head);
     }
   }
 
-  size(){
+  size() {
     let temp = this.#head;
-    let size = 0
-    while(temp != null){
+    let size = 0;
+    while (temp != null) {
       size += 1;
       temp = temp.next;
     }
     return size;
   }
 
-
   head() {
-    return this.#head;
+    return new Node(this.#head.data,null);
+  }
+  tail(){
+    return new Node(this.#tail.data,null);
   }
 }
 
