@@ -9,24 +9,22 @@ class LinkedList {
     if (this.#head === null) {
       this.#head = new Node(value);
       this.#tail = this.#head;
-    }
-    else{
+    } else {
       this.#tail.next = new Node(value);
       this.#tail = this.#tail.next;
-    }    
+    }
   }
 
-  // prepend(value){
-  //   if (this.#head === null) {
-  //     this.#head = new Node(value);
-  //     this.#tail = new Node(value);
-  //   }
-  //   else{
-  //     this.#head = new Node(value,this.#head);
-  //   }
-  // }
+  prepend(value) {
+    if (this.#head === null) {
+      this.#head = new Node(value);
+      this.#tail = this.#head;
+    } else {
+      this.#head = new Node(value,this.#head);
+    }
+  }
 
-  head(){
+  head() {
     return this.#head;
   }
 }

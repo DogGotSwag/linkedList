@@ -2,5 +2,11 @@ import LinkedList from './LinkedList.js';
 
 
 let list = new LinkedList();
-list.append('Didier');
-list.append('John');
+list.prepend('D');
+list.prepend('I');
+list.prepend('D');
+list.prepend('L');
+
+
+
+console.log(list.head());
