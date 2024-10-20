@@ -24,6 +24,17 @@ class LinkedList {
     }
   }
 
+  size(){
+    let temp = this.#head;
+    let size = 0
+    while(temp != null){
+      size += 1;
+      temp = temp.next;
+    }
+    return size;
+  }
+
+
   head() {
     return this.#head;
   }
