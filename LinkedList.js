@@ -35,10 +35,25 @@ class LinkedList {
   }
 
   head() {
-    return new Node(this.#head.data,null);
+    return new Node(this.#head.data);
   }
-  tail(){
-    return new Node(this.#tail.data,null);
+  tail() {
+    return new Node(this.#tail.data);
+  }
+
+  at(index) {
+    try {
+      let temp = this.#head;
+      for (let i = 0; i < index; i++) {
+        if (temp.next === null) {
+          throw new Error("Out Of Bounds");
+        }
+        temp = temp.next;
+      }
+      return new Node(temp.data);
+    } catch (e) {
+      return `ERROR: ${e.message}`;
+    }
   }
 }
 
