@@ -8,7 +8,11 @@ class LinkedList {
   append(value) {
     if (this.#head === null) {
       this.#head = new Node(value);
+      this.#tail = new Node(value);
     }
+    else{
+      this.#tail = new Node(value);
+    }    
   }
 }
 
