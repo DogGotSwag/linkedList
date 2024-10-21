@@ -59,7 +59,7 @@ class LinkedList {
   pop() {
     if (this.#head === null) return null;
     let holder = this.#head;
-    if (this.size() == 1) {
+    if (this.#head.next === null) {
       this.#head = null;
       this.#tail = null;
       return holder;
