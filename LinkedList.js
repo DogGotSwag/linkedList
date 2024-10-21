@@ -56,23 +56,31 @@ class LinkedList {
     }
   }
 
-  pop(){
-    if(this.#head === null) return null;
+  pop() {
+    if (this.#head === null) return null;
     let holder = this.#head;
-    if(this.size() == 1) {
+    if (this.size() == 1) {
       this.#head = null;
       this.#tail = null;
-      return holder
-    }
-    else{
+      return holder;
+    } else {
       let curr = this.#head;
       let prev;
-      while(curr.next != null){
+      while (curr.next != null) {
         prev = curr;
-        curr = curr.next
+        curr = curr.next;
       }
       prev.next = null;
     }
+  }
+
+  contains(value) {
+    let curr = this.#head;
+    while (curr != null) {
+      if (curr.data === value) return true;
+      curr = curr.next;
+    }
+    return false;
   }
 }
 
