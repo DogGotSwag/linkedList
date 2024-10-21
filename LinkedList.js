@@ -106,13 +106,21 @@ class LinkedList {
 
   insertAt(value,index) {
     if(index == 0) this.prepend(value);
-    // let temp = this.#head;
-    // let size = 0;
-    // while (temp != null) {
-    //   size += 1;
-    //   temp = temp.next;
-    // }
-    // return size;
+    try {
+      let curr = this.#head;
+      let prev;
+      for (let i = 0; i < index; i++) {
+        if (curr.next === null) {
+          throw new Error("Out Of Bounds");
+        }        
+        prev = curr;
+        curr = curr.next;
+      }
+      prev.next = new Node(value,curr);
+    } catch (e) {
+      return `ERROR: ${e.message}`;
+    }
+    
   }
 }
 

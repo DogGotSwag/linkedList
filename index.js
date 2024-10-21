@@ -1,12 +1,16 @@
-import LinkedList from './LinkedList.js';
-
+import LinkedList from "./LinkedList.js";
 
 let list = new LinkedList();
-list.prepend('D');
-list.prepend('I');
-list.prepend('D');
-list.prepend('L');
+list.append("D");
+list.append("I");
+list.append("D");
+list.append("I");
+list.append("E");
+list.append("R");
+
+console.log(list.insertAt("Z",6));
 
 
-
-console.log(list.head());
+for (let i = 0; i < list.size(); i++) {
+  console.log(i+": "+list.at(i).data);
+}
