@@ -94,14 +94,25 @@ class LinkedList {
     return null;
   }
 
-  toString(){
+  toString() {
     let curr = this.#head;
-    let string = '';
-    while(curr != null){
+    let string = "";
+    while (curr != null) {
       string += `( ${curr.data} ) => `;
       curr = curr.next;
     }
-    return `${string}null`
+    return `${string}null`;
+  }
+
+  insertAt(value,index) {
+    if(index == 0) this.prepend(value);
+    // let temp = this.#head;
+    // let size = 0;
+    // while (temp != null) {
+    //   size += 1;
+    //   temp = temp.next;
+    // }
+    // return size;
   }
 }
 
