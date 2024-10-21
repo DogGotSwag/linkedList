@@ -93,6 +93,16 @@ class LinkedList {
     }
     return null;
   }
+
+  toString(){
+    let curr = this.#head;
+    let string = '';
+    while(curr != null){
+      string += `( ${curr.data} ) => `;
+      curr = curr.next;
+    }
+    return `${string}null`
+  }
 }
 
 export default LinkedList;
