@@ -55,6 +55,16 @@ class LinkedList {
       return `ERROR: ${e.message}`;
     }
   }
+
+  pop(){
+    if(this.#head === null) return null;
+    if(this.size() == 1) {
+      let holder = this.#head;
+      this.#head = null;
+      this.#tail = null;
+      return holder
+    }
+  }
 }
 
 export default LinkedList;
