@@ -104,23 +104,42 @@ class LinkedList {
     return `${string}null`;
   }
 
-  insertAt(value,index) {
-    if(index == 0) this.prepend(value);
+  insertAt(value, index) {
+    if (index == 0) this.prepend(value);
     try {
       let curr = this.#head;
       let prev;
       for (let i = 0; i < index; i++) {
         if (curr.next === null) {
           throw new Error("Out Of Bounds");
-        }        
+        }
         prev = curr;
         curr = curr.next;
       }
-      prev.next = new Node(value,curr);
+      prev.next = new Node(value, curr);
     } catch (e) {
       return `ERROR: ${e.message}`;
     }
-    
+  }
+
+  removeAt(index){
+    if (index == 0){
+      this.#head = this.#head.next
+    }
+    // try {
+    //   let curr = this.#head;
+    //   let prev;
+    //   for (let i = 0; i < index; i++) {
+    //     if (curr.next === null) {
+    //       throw new Error("Out Of Bounds");
+    //     }
+    //     prev = curr;
+    //     curr = curr.next;
+    //   }
+    //   prev.next = new Node(value, curr);
+    // } catch (e) {
+    //   return `ERROR: ${e.message}`;
+    // }
   }
 }
 
